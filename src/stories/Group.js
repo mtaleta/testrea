@@ -1,6 +1,6 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
-import Group from '../src/components/Group/index'
+import Group from '../components/Group/index'
 
 const stories = storiesOf('Group', module)
 
