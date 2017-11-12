@@ -15,7 +15,7 @@ module.exports = {
     }
   },
   entry: {
-    index: './index.jsx',
+    index: './index.js',
     vendor: ['react', 'react-dom']
   },
   output: {
@@ -64,7 +64,7 @@ module.exports = {
   devServer: {
     contentBase: distPath,
     compress: true,
-    port: 8081
+    port: 8082
   },
   devtool: 'cheap-source-map'
 }
