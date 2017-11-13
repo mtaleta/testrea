@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import React from 'react'
+import { mapPropsAsCss } from 'falcon/utils'
 
 const Wrapper = styled.div`
   padding: 16px 16px 16px 60px;

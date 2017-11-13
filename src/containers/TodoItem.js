@@ -19,7 +19,7 @@ const Check = styled.input`
   height: 40px;
   text-align: center;
   width: 40px;
-  position: inherit;
+  position: absolute;
   top: 0;
   bottom: 0;
   margin: auto 0;
@@ -28,7 +28,7 @@ const Check = styled.input`
 `
 
 const Button = styled.div`
-  position: inherit;
+  position: absolute;
   top: 0;
   right: 10px;
   bottom: 0;
@@ -41,6 +41,9 @@ const Button = styled.div`
   float: right;
 `
 
+const Li = styled.li`
+  position: relative;
+`
 
 export default class TodoItem extends Component {
   static propTypes = {
@@ -99,12 +102,12 @@ export default class TodoItem extends Component {
     }
 
     return (
-      <li className={classnames({
+      <Li className={classnames({
         completed: todo.completed,
         editing: this.state.editing
       })}>
         {element}
-      </li>
+      </Li>
     )
   }
 }

@@ -5,7 +5,7 @@ import Footer from './Footer'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
 import styled from 'styled-components'
 
-const Check = styled.label`
+const Check = styled.input`
   position: relative;
   top: -55px;
   left: -12px;
@@ -25,6 +25,7 @@ const Check = styled.label`
   &:checked:before {
     color: #737373;
   }
+  
 `
 
 const Ul = styled.ul`
