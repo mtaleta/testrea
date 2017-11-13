@@ -75,7 +75,6 @@ const Input = styled.input`
 `
 
 const Group = props => {
-  const { test } = props
   return <Wrapper>
     {props.children}
   </Wrapper>

@@ -2,6 +2,45 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import TodoTextInput from './TodoTextInput'
+import styled from 'styled-components'
+
+const Item = styled.div`
+  white-space: pre-line;
+  word-break: break-all;
+  padding: 15px 60px 15px 15px;
+  margin-left: 45px;
+  display: block;
+  line-height: 1.2;
+  transition: color 0.4s;
+`
+
+// -webkit-appearance: none;隱藏checkbox
+const Check = styled.input`
+  height: 40px;
+  text-align: center;
+  width: 40px;
+  position: inherit;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  border: none;
+  float: left;
+`
+
+const Button = styled.div`
+  position: inherit;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  margin: auto 0;
+  font-size: 30px;
+  color: #cc9a9a;
+  margin-bottom: 11px;
+  float: right;
+`
+
 
 export default class TodoItem extends Component {
   static propTypes = {
@@ -45,17 +84,16 @@ export default class TodoItem extends Component {
     } else {
       element = (
         <div className="view">
-          <input 
-            className="toggle"
+          <Check 
             type="checkbox"
             checked={todo.completed}
             onChange={() => completeTodo(todo.id)} 
           />
-          <label onDoubleClick={this.handleDoubleClick}>
+          <Item onDoubleClick={this.handleDoubleClick}>
             {todo.text}
-          </label>
-          <button className="destroy"
-                  onClick={() => deleteTodo(todo.id)} />
+          </Item>
+          <Button className="destroy"
+                  onClick={() => deleteTodo(todo.id)} >x</Button>
         </div>
       )
     }

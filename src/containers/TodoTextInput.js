@@ -1,6 +1,19 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
+import styled from 'styled-components'
+
+//外框消失border: none;
+const Wrapper = styled.div`
+padding: 16px 16px 16px 60px;
+border: none;
+`
+
+const Edit = styled.input`
+margin: 0;
+font-size: 24px;
+border: none;
+`
 
 export default class TodoTextInput extends Component {
   static propTypes = {
@@ -41,19 +54,21 @@ export default class TodoTextInput extends Component {
 
   render() {
     return (
-      <input className={
-        classnames({
-          edit: this.props.editing,
-          'new-todo': this.props.newTodo
-        })}
-        type="text"
-        placeholder={this.props.placeholder}
-        autoFocus="true"
-        value={this.state.text}
-        onBlur={this.handleBlur}
-        onChange={this.handleChange}
-        onKeyDown={this.handleSubmit} 
-      />
+      <Wrapper>
+        <Edit className={
+          classnames({
+            edit: this.props.editing,
+            'new-todo': this.props.newTodo
+          })}
+          type="text"
+          placeholder={this.props.placeholder}
+          autoFocus="true"
+          value={this.state.text}
+          onBlur={this.handleBlur}
+          onChange={this.handleChange}
+          onKeyDown={this.handleSubmit}  
+        />
+      </Wrapper>
     )
   }
 }

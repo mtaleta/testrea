@@ -1,7 +1,47 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import styled from 'styled-components'
 import classnames from 'classnames'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
+// import { Tag } from '../components/Tag/index'
+//待查Q:Module build failed?
+
+const Count = styled.div`
+  float: left;
+`
+
+const Wrapper = styled.div`
+  color: #777;
+  text-align: center;
+`
+
+const Ul = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+`
+
+const Li = styled.li`
+  display: inline;
+`
+
+const A = styled.a`
+  color: inherit;
+  margin: 3px;
+  padding: 3px 7px;
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  &:hover {
+    border-color: rgba(175, 47, 47, 0.1);
+  }
+  &:checked {
+    border-color: rgba(175, 47, 47, 0.2);
+  }
+`
 
 const FILTER_TITLES = {
   [SHOW_ALL]: 'All',
@@ -24,9 +64,9 @@ export default class Footer extends Component {
     const itemWord = activeCount === 1 ? 'item' : 'items'
 
     return (
-      <span className="todo-count">
+      <Count>
         <strong>{activeCount || 'No'}</strong> {itemWord} left
-      </span>
+      </Count>
     )
   }
 
@@ -36,11 +76,10 @@ export default class Footer extends Component {
     const { filter: selectedFilter, onShow } = this.props
 
     return (
-      <a className={classnames({ selected: filter === selectedFilter })}
-         style={{ cursor: 'pointer' }}
+      <A style={{ cursor: 'pointer' }}
          onClick={() => onShow(filter)}>
         {title}
-      </a>
+      </A>
     )
   }
 
@@ -60,16 +99,19 @@ export default class Footer extends Component {
   render() {
     return (
       <footer className="footer">
+        <Wrapper>
         {this.renderTodoCount()}
-        <ul className="filters">
-          {[ SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED ].map(filter =>
-            <li key={filter}>
-              {this.renderFilterLink(filter)}
-            </li>
-          )}
-        </ul>
-        {this.renderClearButton()}
+          <Ul>
+            {[ SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED ].map(filter =>
+              <Li key={filter}>
+                 {this.renderFilterLink(filter)} 
+              </Li>
+            )}
+          </Ul>
+          {this.renderClearButton()}
+        </Wrapper>
       </footer>
+
     )
   }
 }

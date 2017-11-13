@@ -3,6 +3,42 @@ import PropTypes from 'prop-types'
 import TodoItem from './TodoItem'
 import Footer from './Footer'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
+import styled from 'styled-components'
+
+const Check = styled.label`
+  position: relative;
+  top: -55px;
+  left: -12px;
+  width: 60px;
+  height: 34px;
+  text-align: center;
+  border: none;
+
+  transform: rotate(90deg);
+  -webkit-appearance: none;
+  &:before{
+      content: '❯';
+      font-size: 22px;
+      color: #e6e6e6;
+      padding: 10px 27px 10px 27px;
+    }
+  &:checked:before {
+    color: #737373;
+  }
+`
+
+const Ul = styled.ul`
+  margin: 0;
+  padding: 0;
+  list-style: none;
+`
+
+const Section = styled.div`
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid #e6e6e6;
+`
+
 
 const TODO_FILTERS = {
   [SHOW_ALL]: () => true,
@@ -34,8 +70,7 @@ export default class MainSection extends Component {
     if (todos.length > 0) {
       return (
         <span>
-          <input className="toggle-all"
-                 type="checkbox"
+          <Check type="checkbox"
                  checked={completedCount === todos.length}
                  />
           <label onClick={actions.completeAll}/>
@@ -72,15 +107,15 @@ export default class MainSection extends Component {
     )
 
     return (
-      <section className="main">
+      <Section>
         {this.renderToggleAll(completedCount)}
-        <ul className="todo-list">
+        <Ul>
           {filteredTodos.map(todo =>
             <TodoItem key={todo.id} todo={todo} {...actions} />
           )}
-        </ul>
+        </Ul>
         {this.renderFooter(completedCount)}
-      </section>
+      </Section>
     )
   }
 }

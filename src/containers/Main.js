@@ -5,12 +5,17 @@ import { connect } from 'react-redux'
 import Header from '../containers/Header'
 import MainSection from '../containers/MainSection'
 import * as TodoActions from '../actions'
+import styled from 'styled-components'
+
+const Background = styled.div`
+  background-color: rgb(245, 245, 245);
+`
 
 const Main = ({todos, actions}) => (
-  <div>
+  <Background>
     <Header addTodo={actions.addTodo} />
     <MainSection todos={todos} actions={actions} />
-  </div>
+  </Background>
 )
 
 Main.propTypes = {
