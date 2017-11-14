@@ -36,7 +36,7 @@ const Button = styled.button`
   height: 40px;
   margin: auto 0;
   font-size: 30px;
-  color: #cc9a9a;
+  color: white;
   margin-bottom: 11px;
   float: right;
 
@@ -44,6 +44,13 @@ const Button = styled.button`
   background: none;
   text-decoration: none;
   cursor: pointer;
+  
+  transition: color 0.5s ease-out;
+
+
+  &:hover {
+    color: #cc9a9a;
+  }
 `
 
 const Li = styled.li`
@@ -68,7 +75,7 @@ export default class TodoItem extends Component {
     this.setState({ editing: true })
   }
 
-  //存入id與內容
+  //儲存修改
   handleSave = (id, text) => {
     if (text.length === 0) {
       this.props.deleteTodo(id)

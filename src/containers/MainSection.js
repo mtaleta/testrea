@@ -88,7 +88,7 @@ export default class MainSection extends Component {
     }
   }
 
-  //移除鍵
+  //接Footer方法,並操作
   renderFooter(completedCount) {
     const { todos } = this.props
     const { filter } = this.state

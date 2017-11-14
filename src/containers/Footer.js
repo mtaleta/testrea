@@ -23,7 +23,7 @@ const Li = styled.li`
   display: inline;
 `
 
-const A = styled.a`
+const Choose = styled.a`
   color: inherit;
   margin: 3px;
   padding: 3px 7px;
@@ -91,22 +91,19 @@ export default class Footer extends Component {
     const { filter: selectedFilter, onShow } = this.props
 
     return (
-      <A style={{ cursor: 'pointer' }}
+      <Choose style={{ cursor: 'pointer' }}
          onClick={() => onShow(filter)}>
         {title}
-      </A>
+      </Choose>
     )
   }
 
-  //清除所有todo
+  //清除所有todo(Clear completed)
   renderClearButton() {
     const { completedCount, onClearCompleted } = this.props
     if (completedCount > 0) {
       return (
-        <Clean className="clear-completed"
-                onClick={onClearCompleted} >
-          Clear completed
-        </Clean>
+        <Clean onClick={onClearCompleted} >Clear completed</Clean>
       )
     }
   }
