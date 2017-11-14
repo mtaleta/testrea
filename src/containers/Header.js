@@ -10,7 +10,9 @@ const Text = styled.h1`
   font-size: 100px;
   font-weight: 100;
   text-align: center;
-  color: rgba(175, 47, 47, 0.15);
+  color: rgba(175, 47, 47, 0.35);
+  line-height: 19px;
+  text-shadow: 3px 4px 7px #cccccc;
 `
 
 export default class Header extends Component {
@@ -28,7 +30,7 @@ export default class Header extends Component {
   render() {
     return (
       <header className="header">
-        <Text>我是標題</Text>
+        <Text>todos</Text>
         <TodoTextInput newTodo
                        onSave={this.handleSave}
                        placeholder='What needs to be done?' />

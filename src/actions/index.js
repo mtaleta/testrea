@@ -1,4 +1,3 @@
-
 export function addTodo(text){
   return{
     type: 'ADD_TODO',
@@ -20,7 +19,7 @@ export function editTodo(id, text){
 }
 export function completeTodo(id){
   return{
-    type: 'EDIT_TODO',
+    type: 'COMPLETE_TODO',
     id: id
   }
 }

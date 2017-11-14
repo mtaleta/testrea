@@ -8,7 +8,10 @@ import * as TodoActions from '../actions'
 import styled from 'styled-components'
 
 const Background = styled.div`
-  background-color: rgb(245, 245, 245);
+  min-width: 230px;
+  max-width: 550px;
+  margin: 0 auto;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
 `
 
 const Main = ({todos, actions}) => (
@@ -28,7 +31,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    actions: bindActionCreators(TodoActions, dispatch)
+  actions: bindActionCreators(TodoActions, dispatch)
 })
 
 export default connect(

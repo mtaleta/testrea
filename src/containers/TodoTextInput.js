@@ -13,6 +13,7 @@ const Edit = styled.input`
 margin: 0;
 font-size: 24px;
 border: none;
+outline: none;
 `
 
 export default class TodoTextInput extends Component {

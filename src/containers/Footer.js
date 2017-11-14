@@ -10,11 +10,6 @@ const Count = styled.div`
   float: left;
 `
 
-const Wrapper = styled.div`
-  color: #777;
-  text-align: center;
-`
-
 const Ul = styled.ul`
   margin: 0;
   padding: 0;
@@ -41,6 +36,26 @@ const A = styled.a`
   &:checked {
     border-color: rgba(175, 47, 47, 0.2);
   }
+`
+
+const Footers = styled.div`
+  color: #777;
+  padding: 10px 15px;
+  height: 20px;
+  text-align: center;
+  border-top: 1px solid #e6e6e6;
+`
+
+const Clean = styled.button`
+  float: right;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+
+  color: inherit;
+  background: none;
+  border: 0;
+  font-size: 100%;
 `
 
 const FILTER_TITLES = {
@@ -88,18 +103,17 @@ export default class Footer extends Component {
     const { completedCount, onClearCompleted } = this.props
     if (completedCount > 0) {
       return (
-        <button className="clear-completed"
+        <Clean className="clear-completed"
                 onClick={onClearCompleted} >
           Clear completed
-        </button>
+        </Clean>
       )
     }
   }
 
   render() {
     return (
-      <footer className="footer">
-        <Wrapper>
+      <Footers>
         {this.renderTodoCount()}
           <Ul>
             {[ SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED ].map(filter =>
@@ -109,8 +123,7 @@ export default class Footer extends Component {
             )}
           </Ul>
           {this.renderClearButton()}
-        </Wrapper>
-      </footer>
+      </Footers>
 
     )
   }

@@ -34,7 +34,7 @@ const Ul = styled.ul`
   list-style: none;
 `
 
-const Section = styled.div`
+const Section = styled.section`
   position: relative;
   z-index: 2;
   border-top: 1px solid #e6e6e6;
@@ -65,22 +65,30 @@ export default class MainSection extends Component {
     this.setState({ filter })
   }
 
+//   handleDropdownSelect(mood) {
+//     this.props.dispatch(dropdownSelect(mood));
+//     console.log(this.props);
+//     //this.setState({mood: mood});
+// }
+
+  // completeAll() {
+  //   this.props.dispatch(completeAll())
+  // }
+
   //全選按鈕
   renderToggleAll(completedCount) {
     const { todos, actions } = this.props
     if (todos.length > 0) {
       return (
-        <span>
           <Check type="checkbox"
                  checked={completedCount === todos.length}
-                 />
-          <label onClick={actions.completeAll}/>
-        </span>
+                 onClick={actions.completeAll}
+          />
       )
     }
   }
 
-  //移除鍵(待顯示)
+  //移除鍵
   renderFooter(completedCount) {
     const { todos } = this.props
     const { filter } = this.state

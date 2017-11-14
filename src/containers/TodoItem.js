@@ -22,12 +22,12 @@ const Check = styled.input`
   position: absolute;
   top: 0;
   bottom: 0;
-  margin: auto 0;
+  margin: 0 5px;
   border: none;
   float: left;
 `
 
-const Button = styled.div`
+const Button = styled.button`
   position: absolute;
   top: 0;
   right: 10px;
@@ -39,10 +39,16 @@ const Button = styled.div`
   color: #cc9a9a;
   margin-bottom: 11px;
   float: right;
+
+  border: 0;
+  background: none;
+  text-decoration: none;
+  cursor: pointer;
 `
 
 const Li = styled.li`
   position: relative;
+  border-bottom: 1px solid #ededed;
 `
 
 export default class TodoItem extends Component {
