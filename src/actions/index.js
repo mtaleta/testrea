@@ -26,7 +26,6 @@ export function completeTodo(id){
 export function completeAll(){
   return{
     type: 'COMPLETE_ALL',
-    id: id
   }
 }
 export function clearCompleted(){
