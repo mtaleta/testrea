@@ -117,7 +117,10 @@ export default class TodoItem extends Component {
       <Li className={classnames({
         completed: todo.completed,
         editing: this.state.editing
-      })}>
+        })}
+        style={todo.completed ? 
+        {color: '#d9d9d9', textDecoration: 'line-through'} : {color: 'black'}}
+      >
         {element}
       </Li>
     )
