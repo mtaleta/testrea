@@ -3,54 +3,8 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import classnames from 'classnames'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
-// import { Tag } from '../components/Tag/index'
-//待查Q:Module build failed?
-
-const Count = styled.div`
-  float: left;
-`
-const Ul = styled.ul`
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  position: absolute;
-  right: 0;
-  left: 0;
-`
-const Li = styled.li`
-  display: inline;
-`
-const Choose = styled.a`
-  color: inherit;
-  margin: 3px;
-  padding: 3px 7px;
-  text-decoration: none;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  &:hover {
-    border-color: rgba(175, 47, 47, 0.1);
-  }
-  &:checked {
-    border-color: rgba(175, 47, 47, 0.2);
-  }
-`
-const Footers = styled.div`
-  color: #777;
-  padding: 10px 15px;
-  height: 20px;
-  text-align: center;
-  border-top: 1px solid #e6e6e6;
-`
-const Clean = styled.button`
-  float: right;
-  text-decoration: none;
-  cursor: pointer;
-  position: relative;
-  color: inherit;
-  background: none;
-  border: 0;
-  font-size: 100%;
-`
+import Tag from '../components/Tag/index'
+const { Footers, Count, Ul, Li, Choose, Clean } = Tag
 
 const FILTER_TITLES = {
   [SHOW_ALL]: 'All',

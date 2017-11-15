@@ -1,16 +1,16 @@
 import styled from 'styled-components'
 import React from 'react'
-import { mapPropsAsCss } from 'falcon/utils'
 
+// 外框消失outline: none;
 const Wrapper = styled.div`
-  padding: 16px 16px 16px 60px;
-  border: none;
+padding: 16px 16px 16px 60px;
+border: none;
 `
-
 const Edit = styled.input`
-  margin: 0;
-  font-size: 24px;
-  border: none;
+margin: 0;
+font-size: 24px;
+border: none;
+outline: none;
 `
 
 const Input = props => {
@@ -21,4 +21,5 @@ const Input = props => {
 
 Input.Wrapper = Wrapper
 Input.Edit = Edit
+
 export default Input

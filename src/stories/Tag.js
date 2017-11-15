@@ -4,21 +4,27 @@ import Tag from '../components/Tag/index'
 
 const stories = storiesOf('Tag', module)
 
-const { Wrapper, Ul, Li, A } = Tag
+const { Footers, Count, Ul, Li, Choose, Clean } = Tag
 
 stories.add('Main', () => <div>
-  <Wrapper>
+  <Footers>
     <Ul>
       <Li>
-        <A href='#'>All</A>
+        <Count> Count</Count>
       </Li>
       <Li>
-        <A href='#'>Active</A>
+        <Choose href='#'>All</Choose>
       </Li>
       <Li>
-        <A href='#'>Complete</A>
+        <Choose href='#'>Active</Choose>
+      </Li>
+      <Li>
+        <Choose href='#'>Complete</Choose>
+      </Li>
+      <Li>
+        <Clean>Clean complete</Clean>
       </Li>
     </Ul>
-  </Wrapper>
+  </Footers>
 </div>
 )
