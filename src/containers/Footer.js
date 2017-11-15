@@ -9,7 +9,6 @@ import { SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE } from '../constants/TodoFilters'
 const Count = styled.div`
   float: left;
 `
-
 const Ul = styled.ul`
   margin: 0;
   padding: 0;
@@ -18,11 +17,9 @@ const Ul = styled.ul`
   right: 0;
   left: 0;
 `
-
 const Li = styled.li`
   display: inline;
 `
-
 const Choose = styled.a`
   color: inherit;
   margin: 3px;
@@ -37,7 +34,6 @@ const Choose = styled.a`
     border-color: rgba(175, 47, 47, 0.2);
   }
 `
-
 const Footers = styled.div`
   color: #777;
   padding: 10px 15px;
@@ -45,13 +41,11 @@ const Footers = styled.div`
   text-align: center;
   border-top: 1px solid #e6e6e6;
 `
-
 const Clean = styled.button`
   float: right;
   text-decoration: none;
   cursor: pointer;
   position: relative;
-
   color: inherit;
   background: none;
   border: 0;

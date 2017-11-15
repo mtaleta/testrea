@@ -13,7 +13,7 @@ const Check = styled.input`
   height: 34px;
   text-align: center;
   border: none;
-
+  outline: none;
   transform: rotate(90deg);
   -webkit-appearance: none;
   &:before{
@@ -21,25 +21,22 @@ const Check = styled.input`
       font-size: 22px;
       color: #e6e6e6;
       padding: 10px 27px 10px 27px;
-    }
+  }
   &:checked:before {
     color: #737373;
   }
-  
 `
-
 const Ul = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
+  margin-top: -40px;
 `
-
 const Section = styled.section`
   position: relative;
   z-index: 2;
   border-top: 1px solid #e6e6e6;
 `
-
 
 const TODO_FILTERS = {
   [SHOW_ALL]: () => true,

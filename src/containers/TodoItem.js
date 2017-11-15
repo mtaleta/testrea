@@ -16,17 +16,22 @@ const Item = styled.div`
 
 // -webkit-appearance: none;隱藏checkbox
 const Check = styled.input`
-  height: 40px;
   text-align: center;
   width: 40px;
   position: absolute;
   top: 0;
   bottom: 0;
-  margin: 0 5px;
   border: none;
   float: left;
+  outline: none;
+  -webkit-appearance: none;
+  &:after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#ededed" stroke-width="3"/></svg>');
+  }
+  &:checked:after {
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="-10 -18 100 135"><circle cx="50" cy="50" r="50" fill="none" stroke="#bddad5" stroke-width="3"/><path fill="#5dc2af" d="M72 25L42 71 27 56l-4 4 20 20 34-52z"/></svg>');
+  }
 `
-
 const Button = styled.button`
   position: absolute;
   top: 0;
@@ -39,20 +44,15 @@ const Button = styled.button`
   color: white;
   margin-bottom: 11px;
   float: right;
-
   border: 0;
   background: none;
   text-decoration: none;
   cursor: pointer;
-  
   transition: color 0.5s ease-out;
-
-
   &:hover {
     color: #cc9a9a;
   }
 `
-
 const Li = styled.li`
   position: relative;
   border-bottom: 1px solid #ededed;
@@ -84,7 +84,6 @@ export default class TodoItem extends Component {
     }
     this.setState({ editing: false })
   }
-
 
   render() {
     const { todo, completeTodo, deleteTodo } = this.props

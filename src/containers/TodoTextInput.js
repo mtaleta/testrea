@@ -8,7 +8,6 @@ const Wrapper = styled.div`
 padding: 16px 16px 16px 60px;
 border: none;
 `
-
 const Edit = styled.input`
 margin: 0;
 font-size: 24px;
