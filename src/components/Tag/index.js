@@ -51,9 +51,9 @@ const Clean = styled.button`
 `
 
 const Tag = props => {
-  return <Wrapper>
+  return <Footers>
     {props.children}
-  </Wrapper>
+  </Footers>
 }
 
 Tag.Footers = Footers

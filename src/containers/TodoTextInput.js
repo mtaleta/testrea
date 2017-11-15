@@ -19,6 +19,7 @@ export default class TodoTextInput extends Component {
     text: this.props.text || ''
   }
 
+  //保存輸出
   handleSubmit = e => {
     //去掉空白
     const text = e.target.value.trim()
