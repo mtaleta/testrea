@@ -32,7 +32,6 @@ const Ul = styled.ul`
   list-style: none;
   margin-top: -40px;
 `
-
 const Section = styled.section`
   position: relative;
   z-index: 2;

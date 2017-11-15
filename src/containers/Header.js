@@ -2,18 +2,9 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import TodoTextInput from './TodoTextInput'
 import styled from 'styled-components'
+import Title from '../components/Title/index'
 
-const Text = styled.h1`
-  position: inherit;
-  top: -155px;
-  width: 100%;
-  font-size: 100px;
-  font-weight: 100;
-  text-align: center;
-  color: rgba(175, 47, 47, 0.35);
-  line-height: 19px;
-  text-shadow: 3px 4px 7px #cccccc;
-`
+const { Text } = Title
 
 export default class Header extends Component {
   static propTypes = {
