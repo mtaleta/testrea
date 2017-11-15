@@ -1,12 +1,9 @@
-//Main
 export function addTodo(text){
-  console.log('addTodo')
   return{
     type: 'ADD_TODO',
     text: text
   }
 }
-
 export function deleteTodo(id){
   return{
     type: 'DELETE_TODO',
@@ -37,4 +34,3 @@ export function clearCompleted(){
 
   }
 }
-

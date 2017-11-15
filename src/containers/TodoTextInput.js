@@ -2,9 +2,18 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import styled from 'styled-components'
-import Input from '../components/Input'
 
-const { Wrapper, Edit } = Input
+//外框消失border: none;
+const Wrapper = styled.div`
+padding: 16px 16px 16px 60px;
+border: none;
+`
+const Edit = styled.input`
+margin: 0;
+font-size: 24px;
+border: none;
+outline: none;
+`
 
 export default class TodoTextInput extends Component {
   static propTypes = {
@@ -45,7 +54,6 @@ export default class TodoTextInput extends Component {
 
   render() {
     return (
-      <div>
       <Wrapper>
         <Edit className={
           classnames({
@@ -61,7 +69,6 @@ export default class TodoTextInput extends Component {
           onKeyDown={this.handleSubmit}  
         />
       </Wrapper>
-      </div>
     )
   }
 }

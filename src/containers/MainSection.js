@@ -62,6 +62,16 @@ export default class MainSection extends Component {
     this.setState({ filter })
   }
 
+//   handleDropdownSelect(mood) {
+//     this.props.dispatch(dropdownSelect(mood));
+//     console.log(this.props);
+//     //this.setState({mood: mood});
+// }
+
+  // completeAll() {
+  //   this.props.dispatch(completeAll())
+  // }
+
   //全選按鈕
   renderToggleAll(completedCount) {
     const { todos, actions } = this.props
