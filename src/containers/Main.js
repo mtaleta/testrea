@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import Header from '../containers/Header'
 import MainSection from '../containers/MainSection'
 import * as TodoActions from '../actions'
-import Background from '../components/Background/index'
+import Background from 'components/Background/index'
 
 const { Back } = Background
 

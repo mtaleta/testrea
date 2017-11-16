@@ -25,27 +25,8 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: [/node_modules/],
-        use: [
-          {
-            loader: 'babel-loader',
-            options: {
-              presets: [
-                [
-                  'es2015', {
-                    modules: false
-                  }
-                ],
-                'react'
-              ],
-              plugins: [
-                'babel-plugin-transform-class-properties',
-                'transform-object-rest-spread'
-              ]
-            }
-          }
-        ]
+        test: /\.jsx?$/,
+        use: ['babel-loader']
       }, {
         test: /\.css$/,
         use: [
