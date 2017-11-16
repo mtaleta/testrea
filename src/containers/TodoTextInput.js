@@ -7,13 +7,6 @@ import Input from '../components/Input'
 const { Wrapper, Edit } = Input
 
 export default class TodoTextInput extends Component {
-  static propTypes = {
-    onSave: PropTypes.func.isRequired,
-    text: PropTypes.string,
-    placeholder: PropTypes.string,
-    editing: PropTypes.bool,
-    newTodo: PropTypes.bool
-  }
 
   state = {
     text: this.props.text || ''
@@ -65,4 +58,12 @@ export default class TodoTextInput extends Component {
       </div>
     )
   }
+}
+
+TodoTextInput.propTypes = {
+  onSave: PropTypes.func.isRequired,
+  text: PropTypes.string,
+  placeholder: PropTypes.string,
+  editing: PropTypes.bool,
+  newTodo: PropTypes.bool
 }

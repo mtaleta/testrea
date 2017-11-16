@@ -59,12 +59,6 @@ const Li = styled.li`
 `
 
 export default class TodoItem extends Component {
-  static propTypes = {
-    todo: PropTypes.object.isRequired,
-    editTodo: PropTypes.func.isRequired,
-    deleteTodo: PropTypes.func.isRequired,
-    completeTodo: PropTypes.func.isRequired
-  }
 
   state = {
     editing: false
@@ -125,4 +119,11 @@ export default class TodoItem extends Component {
       </Li>
     )
   }
+}
+
+TodoItem.propTypes = {
+  todo: PropTypes.object.isRequired,
+  editTodo: PropTypes.func.isRequired,
+  deleteTodo: PropTypes.func.isRequired,
+  completeTodo: PropTypes.func.isRequired
 }

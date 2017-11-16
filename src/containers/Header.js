@@ -7,11 +7,8 @@ import Title from '../components/Title/index'
 const { Text } = Title
 
 export default class Header extends Component {
-  static propTypes = {
-    addTodo: PropTypes.func.isRequired
-  }
 
-  //存入text
+  // 存入text
   handleSave = text => {
     if (text.length !== 0) {
       this.props.addTodo(text)
@@ -28,4 +25,8 @@ export default class Header extends Component {
       </header>
     )
   }
+}
+
+Header.propTypes = {
+  addTodo: PropTypes.func.isRequired
 }

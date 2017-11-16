@@ -1,3 +1,4 @@
+// resolve 檔案的絕對路徑
 const path = require('path')
 const webpack = require('webpack')
 

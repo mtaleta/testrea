@@ -47,7 +47,6 @@ const Wrapper = styled.div`
 `
 
 const Span = styled.span`
-
   padding: 6px 12px;
   font-size: 14px;
   font-weight: 400;
