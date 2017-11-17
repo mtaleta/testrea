@@ -27,6 +27,7 @@ export default class Footer extends Component {
   // 顯示選擇的All,Active,Completed
   renderFilterLink (filter) {
     const title = FILTER_TITLES[filter]
+    // eslint-disable-line no-unused-vars
     const { filter: selectedFilter, onShow } = this.props
 
     return (

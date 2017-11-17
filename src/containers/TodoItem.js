@@ -59,18 +59,25 @@ const Li = styled.li`
 `
 
 export default class TodoItem extends Component {
-
-  state = {
-    editing: false
+  constructor (props) {
+    super(props)
+    this.state = {
+      editing: false
+    }
   }
 
-  //雙擊後變更內容
-  handleDoubleClick = () => {
-    this.setState({ editing: true })
+  // 雙擊後變更內容
+  // handleDoubleClick = () => {
+  //   this.setState({ editing: true })
+  // }
+  handleDoubleClick () {
+    this.setState({
+      editing: true
+    })
   }
 
-  //儲存修改
-  handleSave = (id, text) => {
+  // 儲存修改
+  handleSave (id, text) {
     if (text.length === 0) {
       this.props.deleteTodo(id)
     } else {
@@ -79,12 +86,12 @@ export default class TodoItem extends Component {
     this.setState({ editing: false })
   }
 
-  render() {
+  render () {
     const { todo, completeTodo, deleteTodo } = this.props
     let element
     if (this.state.editing) {
       element = (
-        <TodoTextInput 
+        <TodoTextInput
           text={todo.text}
           editing={this.state.editing}
           onSave={(text) => this.handleSave(todo.id, text)}
@@ -92,17 +99,17 @@ export default class TodoItem extends Component {
       )
     } else {
       element = (
-        <div className="view">
-          <Check 
-            type="checkbox"
+        <div className='view'>
+          <Check
+            type='checkbox'
             checked={todo.completed}
-            onChange={() => completeTodo(todo.id)} 
+            onChange={() => completeTodo(todo.id)}
           />
           <Item onDoubleClick={this.handleDoubleClick}>
             {todo.text}
           </Item>
-          <Button className="destroy"
-                  onClick={() => deleteTodo(todo.id)} >x</Button>
+          <Button className='destroy'
+            onClick={() => deleteTodo(todo.id)} >x</Button>
         </div>
       )
     }
@@ -111,9 +118,9 @@ export default class TodoItem extends Component {
       <Li className={classnames({
         completed: todo.completed,
         editing: this.state.editing
-        })}
-        style={todo.completed ? 
-        {color: '#d9d9d9', textDecoration: 'line-through'} : {color: 'black'}}
+      })}
+        style={todo.completed
+        ? {color: '#d9d9d9', textDecoration: 'line-through'} : {color: 'black'}}
       >
         {element}
       </Li>

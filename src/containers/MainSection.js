@@ -53,12 +53,12 @@ export default class MainSection extends Component {
     this.props.actions.clearCompleted()
   }
 
-  //變更filter
+  // 變更filter
   handleShow = filter => {
     this.setState({ filter })
   }
 
-  //全選按鈕
+  // 全選按鈕
   renderToggleAll(completedCount) {
     const { todos, actions } = this.props
     if (todos.length > 0) {
