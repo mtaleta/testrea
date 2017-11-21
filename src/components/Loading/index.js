@@ -68,23 +68,23 @@ const LoadingCircle = styled.div`
   animation: circle 0.5s infinite linear;
 `
 // 背景圖片引入有問題background-image: url(./loading.png)
-// const LoadingCircleGradient = styled.div`
-//   width: 60px;
-//   height: 60px;
-//   margin: 0 auto;
-//   background-image: url(./loading.png);
-//   background-size: cover;
-// `
+const LoadingCircleGradient = styled.div`
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
 
-// const Mask = styled.div`
-//   position: absolute;
-//   border-radius: 50%;
-//   width: 0;
-//   height: 0;
-//   border: 45px solid transparent;
-//   border-left: 45px solid rgba(255, 254, 254, 0.7);
-//   animation: circle 0.5s infinite linear;
-// `
+  background-size: cover;
+`
+
+const Mask = styled.div`
+  position: absolute;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  border: 45px solid transparent;
+  border-left: 45px solid rgba(255, 254, 254, 0.7);
+  animation: circle 0.5s infinite linear;
+`
 
 // 圖形圍繞
 const Round = styled.div`
@@ -137,6 +137,6 @@ Loading.Round = Round
 Loading.CircleOne = CircleOne
 Loading.CircleTwo = CircleTwo
 
-// Loading.LoadingCircleGradient = LoadingCircleGradient
-// Loading.Mask = Mask
+Loading.LoadingCircleGradient = LoadingCircleGradient
+Loading.Mask = Mask
 export default Loading

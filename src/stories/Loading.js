@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react'
 import Loading from '../components/Loading/index'
-
+import card from '../components/Loading/loading.png'
 const stories = storiesOf('Loading', module)
 
 const {
@@ -12,9 +12,9 @@ const {
   LoadingCircle,
   Round,
   CircleOne,
-  CircleTwo
-  // LoadingCircleGradient,
-  // Mask
+  CircleTwo,
+  LoadingCircleGradient,
+  Mask
 } = Loading
 
 stories.add('Main', () => <Wrapper>
@@ -34,6 +34,13 @@ stories.add('Main', () => <Wrapper>
     <LoadingContainer>
       <CircleOne />
       <CircleTwo />
+    </LoadingContainer>
+  </Round>
+  <p />
+  <Round>
+    <LoadingContainer>
+      <LoadingCircleGradient src={card} />
+      <Mask />
     </LoadingContainer>
   </Round>
 </Wrapper>

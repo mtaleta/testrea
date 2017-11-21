@@ -6,13 +6,6 @@ import Input from '../components/Input'
 const { Wrapper, Edit } = Input
 
 export default class TodoTextInput extends Component {
-  // constructor (props) {
-  //   super(props)
-  //   this.state = {
-  //     text: this.props.text || ''
-  //   }
-  // }
-
   state = {
     text: this.props.text || ''
   }
