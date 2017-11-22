@@ -33,9 +33,6 @@ class SearchBar extends Component {
     this.setState({term})
     this.props.onSearchTermChange(term)
   }
-  // onFormSubmit (event) {
-  //   event.preventDefault()
-  // }
 }
 
 export default SearchBar
