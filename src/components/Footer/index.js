@@ -44,8 +44,9 @@ const Wrapper = styled.ul`
 const Footer = props => {
   return <BackgroundWrapper>
     <Wrapper>
-      <li><a>123</a></li>
-      <li><a>456</a></li>
+      <li><a>回到首頁</a></li>
+      <li><a>常見問題</a></li>
+      <li><a>關於我</a></li>
     </Wrapper>
   </BackgroundWrapper>
 }

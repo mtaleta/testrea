@@ -6,6 +6,7 @@ import Header from '../containers/Header'
 import MainSection from '../containers/MainSection'
 import * as TodoActions from '../actions'
 import Background from 'components/Background/index'
+import { Link } from 'react-router-dom'
 
 const { Back } = Background
 
@@ -13,6 +14,7 @@ const Main = ({todos, actions}) => (
   <Back>
     <Header addTodo={actions.addTodo} />
     <MainSection todos={todos} actions={actions} />
+    <Link to='/'>back</Link>
   </Back>
 )
 

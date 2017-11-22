@@ -6,10 +6,13 @@ import Input from '../components/Input'
 const { Wrapper, Edit } = Input
 
 export default class TodoTextInput extends Component {
-  state = {
-    text: this.props.text || ''
-  }
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      text: this.props.text || ''
+    }
+  }
   // 保存輸出
   handleSubmit = e => {
     // 去掉空白

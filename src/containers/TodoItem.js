@@ -61,6 +61,7 @@ const Li = styled.li`
 export default class TodoItem extends Component {
   constructor (props) {
     super(props)
+
     this.state = {
       editing: false
     }

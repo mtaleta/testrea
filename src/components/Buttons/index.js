@@ -25,9 +25,13 @@ const Button = styled.button`
   font-size: 16px;
   min-height: 40px;
   min-width: 144px;
+  margin: 5px 10px;
 
   &:disabled {
     opacity: 0.5;
+  }
+  &:hover{
+    background-color: #2e6da4;
   }
 
   ${props => get(sizeStyles, get(props, 'size'))}

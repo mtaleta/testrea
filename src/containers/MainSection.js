@@ -45,8 +45,11 @@ const TODO_FILTERS = {
 }
 
 export default class MainSection extends Component {
+  constructor(props) {
+    super(props);
 
-  state = { filter: SHOW_ALL }
+    this.state = { filter: SHOW_ALL }
+  }
 
   //清除
   handleClearCompleted = () => {

@@ -61,10 +61,10 @@ const LoadingCircle = styled.div`
   width: 40px;
   height: 40px;
   margin: 0 auto;
-  border-top: 8px solid #b1f1f3;
-  border-left: 8px solid #b1f1f3;
-  border-bottom: 8px solid #b1f1f3;
-  border-right: 8px solid orange;
+  border-top: 8px solid #F3ECC8;
+  border-left: 8px solid #F3ECC8;
+  border-bottom: 8px solid #F3ECC8;
+  border-right: 8px solid #78C2C3;
   animation: circle 0.5s infinite linear;
 `
 // 背景圖片引入有問題background-image: url(./loading.png)
