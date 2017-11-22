@@ -18,18 +18,23 @@ class SearchBar extends Component {
   }
   render () {
     return (
-      <Wrapper style={Bar}>
-        <Edit
-          style={InputEdit}
-          placeholder='找什麼好?'
-          value={this.state.term}
-          onChange={event => this.onInputChange(event.target.value)} />
-      </Wrapper>
+      <form>
+        <Wrapper style={Bar}>
+          <Edit
+            style={InputEdit}
+            placeholder='找什麼好?'
+            value={this.state.term}
+            onChange={event => this.onInputChange()} />
+        </Wrapper>
+        <span>
+          <button>Submit</button>
+        </span>
+      </form>
     )
   }
 
   onInputChange (term) {
-    this.setState({term})
+    this.setState({term:event.target.value})
     this.props.onSearchTermChange(term)
   }
 }

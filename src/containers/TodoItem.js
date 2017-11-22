@@ -65,6 +65,7 @@ export default class TodoItem extends Component {
     this.state = {
       editing: false
     }
+    this.handleDoubleClick = this.handleDoubleClick.bind(this)
   }
 
   // 雙擊後變更內容

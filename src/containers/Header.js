@@ -6,8 +6,13 @@ import Title from '../components/Title/index'
 const { Text } = Title
 
 export default class Header extends Component {
+  constructor (props) {
+    super(props)
+
+    this.handleSave = this.handleSave.bind(this)
+  }
   // 存入text
-  handleSave = text => {
+  handleSave (text) {
     if (text.length !== 0) {
       this.props.addTodo(text)
     }

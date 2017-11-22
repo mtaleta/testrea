@@ -6,19 +6,23 @@ import Input from '../components/Input'
 const { Wrapper, Edit } = Input
 
 export default class TodoTextInput extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
     this.state = {
       text: this.props.text || ''
     }
+
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleBlur = this.handleBlur.bind(this)
   }
   // 保存輸出
-  handleSubmit = e => {
+  handleSubmit (event) {
     // 去掉空白
-    const text = e.target.value.trim()
+    const text = event.target.value.trim()
     // 鍵盤按鍵enter = 13
-    if (e.which === 13) {
+    if (event.which === 13) {
       this.props.onSave(text)
       if (this.props.newTodo) {
         this.setState({ text: '' })
@@ -27,14 +31,14 @@ export default class TodoTextInput extends Component {
   }
 
   // 變更輸入
-  handleChange = e => {
-    this.setState({ text: e.target.value })
+  handleChange (event) {
+    this.setState({ text: event.target.value })
   }
 
   // 存入變更
-  handleBlur = e => {
+  handleBlur (event) {
     if (!this.props.newTodo) {
-      this.props.onSave(e.target.value)
+      this.props.onSave(event.target.value)
     }
   }
 

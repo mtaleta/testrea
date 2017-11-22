@@ -45,37 +45,41 @@ const TODO_FILTERS = {
 }
 
 export default class MainSection extends Component {
-  constructor(props) {
-    super(props);
+  constructor (props) {
+    super(props)
 
     this.state = { filter: SHOW_ALL }
+    this.handleClearCompleted = this.handleClearCompleted.bind(this)
+    this.handleShow = this.handleShow.bind(this)
+    this.renderToggleAll = this.renderToggleAll.bind(this)
+    this.renderFooter = this.renderFooter.bind(this)
   }
 
-  //清除
-  handleClearCompleted = () => {
+  // 清除
+  handleClearCompleted () {
     this.props.actions.clearCompleted()
   }
 
   // 變更filter
-  handleShow = filter => {
+  handleShow (filter) {
     this.setState({ filter })
   }
 
   // 全選按鈕
-  renderToggleAll(completedCount) {
+  renderToggleAll (completedCount) {
     const { todos, actions } = this.props
     if (todos.length > 0) {
       return (
-          <Check type="checkbox"
-                 checked={completedCount === todos.length}
-                 onClick={actions.completeAll}
+        <Check type='checkbox'
+          checked={completedCount === todos.length}
+          onClick={actions.completeAll}
           />
       )
     }
   }
 
-  //接Footer方法,並操作
-  renderFooter(completedCount) {
+  // 接Footer方法,並操作
+  renderFooter (completedCount) {
     const { todos } = this.props
     const { filter } = this.state
     const activeCount = todos.length - completedCount
@@ -83,15 +87,15 @@ export default class MainSection extends Component {
     if (todos.length) {
       return (
         <Footer completedCount={completedCount}
-                activeCount={activeCount}
-                filter={filter}
-                onClearCompleted={this.handleClearCompleted}
-                onShow={this.handleShow} />
+          activeCount={activeCount}
+          filter={filter}
+          onClearCompleted={this.handleClearCompleted}
+          onShow={this.handleShow} />
       )
     }
   }
 
-  render() {
+  render () {
     const { todos, actions } = this.props
     const { filter } = this.state
 
