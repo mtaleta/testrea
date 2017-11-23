@@ -5,11 +5,13 @@ import ReduxPromise from 'redux-promise'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import reducer from './reducers'
-import Main from './containers/Main'
+import Main from './containers/Todos/Main'
 import Title from './containers/Title'
 import App from './components/app'
-import Video from './components/video_index'
-
+import Video from './components/Youtube/video_index'
+import Blog from './components/Blog/posts_index'
+import PostNew from './components/Blog/posts_new'
+import PostsShow from './components/Blog/post_show'
 // import 'bootstrap/dist/css/bootstrap.css'
 
 // 加入middleware
@@ -28,10 +30,13 @@ render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route path='/main' component={Main} />
-          <Route path='/app' component={App} />
-          <Route path='/video' component={Video} />
-          <Route path='/' component={Title} />
+          <Route exact path='/' component={Title} />
+          <Route exact path='/blog' component={Blog} />
+          <Route exact path='/blog/new' component={PostNew} />
+          <Route exact path='/blog/:id' component={PostsShow} />
+          <Route exact path='/main' component={Main} />
+          <Route exact path='/app' component={App} />
+          <Route exact path='/video' component={Video} />
         </Switch>
       </div>
     </BrowserRouter>

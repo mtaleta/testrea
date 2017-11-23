@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Input from '../components/Input/index'
+import Input from '../Input'
 
 const { Wrapper, Edit } = Input
 const Bar = {

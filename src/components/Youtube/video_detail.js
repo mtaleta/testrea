@@ -1,5 +1,5 @@
 import React from 'react'
-import Loading from '../components/Loading/index'
+import Loading from '../Loading'
 
 const Detail = {
   'marginTop': '10px',
@@ -8,14 +8,12 @@ const Detail = {
   'borderRadius': '4px'
 }
 
-const { AnimalCircle, LoadingContainer, LoadingCircle } = Loading
+const { AnimalCircle, LoadingCircle } = Loading
 const VideoDetail = ({video}) => {
   if (!video) {
     return <div>
       <AnimalCircle>
-        <LoadingContainer>
-          <LoadingCircle />
-        </LoadingContainer>
+        <LoadingCircle />
       </AnimalCircle>
     </div>
   }
