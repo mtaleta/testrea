@@ -3,14 +3,15 @@ import React from 'react'
 
 // 外框消失outline: none;
 const Wrapper = styled.div`
-padding: 16px 16px 16px 60px;
-border: none;
+  padding: 16px 16px 16px 60px;
+  border: none;
 `
 const Edit = styled.input`
-margin: 0;
-font-size: 24px;
-border: none;
-outline: none;
+  margin: 0;
+  font-size: 24px;
+  border: none;
+  outline: none;
+  width: 100%;
 `
 
 const Input = props => {

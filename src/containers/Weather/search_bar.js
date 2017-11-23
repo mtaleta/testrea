@@ -1,7 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { fetchWeather } from '../actions/weather_action'
+import { fetchWeather } from '../../actions/weather_action'
+import Input from 'components/Input'
+
+const { Edit } = Input
 
 class SearchBar extends Component {
   constructor (props) {
@@ -27,7 +30,7 @@ class SearchBar extends Component {
   render () {
     return (
       <form onSubmit={this.onFormSubmit} className='input-group'>
-        <input
+        <Edit
           placeholder='Get a five- day forecast in your favorite cities'
           className='form-control'
           value={this.state.term}

@@ -6,12 +6,14 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import reducer from './reducers'
 import Main from './containers/Todos/Main'
-import Title from './containers/Title'
-import App from './components/app'
-import Video from './components/Youtube/video_index'
-import Blog from './components/Blog/posts_index'
-import PostNew from './components/Blog/posts_new'
-import PostsShow from './components/Blog/post_show'
+import Title from './containers/Menu'
+import App from './containers/Weather/app'
+import Video from 'components/Youtube/video_index'
+import Blog from 'components/Blog/posts_index'
+import PostNew from 'components/Blog/posts_new'
+import PostsShow from 'components/Blog/post_show'
+import CanvasIndex from 'components/Canvas/index'
+import Book from 'components/Book/index'
 // import 'bootstrap/dist/css/bootstrap.css'
 
 // 加入middleware
@@ -31,12 +33,14 @@ render(
       <div>
         <Switch>
           <Route exact path='/' component={Title} />
+          <Route exact path='/canvas' component={CanvasIndex} />
           <Route exact path='/blog' component={Blog} />
           <Route exact path='/blog/new' component={PostNew} />
           <Route exact path='/blog/:id' component={PostsShow} />
           <Route exact path='/main' component={Main} />
           <Route exact path='/app' component={App} />
           <Route exact path='/video' component={Video} />
+          <Route exact path='/book' component={Book} />
         </Switch>
       </div>
     </BrowserRouter>
