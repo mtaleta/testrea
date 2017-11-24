@@ -3,4 +3,3 @@ node_modules/*
 dist/index.bundle.js
 dist/vendor.bundle.js
 .vscode
-dist
