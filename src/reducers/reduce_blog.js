@@ -1,7 +1,8 @@
 import _ from 'lodash'
 import { FETCH_POSTS, FETCH_POST, DELETE_POST } from '../actions/blog_action'
+import { FETCH_WEATHER } from '../actions/weather_action'
 
-export default function (state = {}, action) {
+export function PostsReducer (state = {}, action) {
   switch (action.type) {
     case DELETE_POST:
       // omit返回忽略屬性之外的自身和繼承的可枚舉屬性
@@ -13,4 +14,12 @@ export default function (state = {}, action) {
     default:
       return state
   }
+}
+
+export function WeatherReducer (state = [], action) {
+  switch (action.type) {
+    case FETCH_WEATHER:
+      return [ action.payload.data, ...state ]
+  }
+  return state
 }

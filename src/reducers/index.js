@@ -1,10 +1,8 @@
 import { combineReducers } from 'redux'
 import todos from './todos'
-import WeatherReducer from './reducer_weather'
-import PostsReducer from './reduce_blog'
+import { PostsReducer, WeatherReducer } from './reduce_blog'
 import { reducer as formReducer } from 'redux-form'
-import BookReducer from './book'
-import ActivBook from './activ_book'
+import { ActivBook, BookReducer } from './activ_book'
 
 const rootReducer = combineReducers({
   todos,

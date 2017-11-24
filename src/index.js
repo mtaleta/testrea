@@ -1,8 +1,9 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { createStore, applyMiddleware, compose } from 'redux'
-import ReduxPromise from 'redux-promise'
-import { Provider } from 'react-redux'
+// import Promise from 'redux-promise'
+import {Provider} from 'react-redux'
+import thunkMiddleware from 'redux-thunk'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import reducer from './reducers'
 import Main from './containers/Todos/Main'
@@ -14,13 +15,14 @@ import PostNew from 'components/Blog/posts_new'
 import PostsShow from 'components/Blog/post_show'
 import CanvasIndex from 'components/Canvas/index'
 import Book from 'components/Book/index'
+import WeatherMood from 'components/WeatherMood/Main'
 // import 'bootstrap/dist/css/bootstrap.css'
 
 // 加入middleware
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   reducer,
- composeEnhancers(applyMiddleware(ReduxPromise)))
+ composeEnhancers(applyMiddleware(thunkMiddleware)))
 
 // const store = createStore(
 //   reducer,
@@ -41,6 +43,7 @@ render(
           <Route exact path='/app' component={App} />
           <Route exact path='/video' component={Video} />
           <Route exact path='/book' component={Book} />
+          <Route exact path='/weathermood' component={WeatherMood} />
         </Switch>
       </div>
     </BrowserRouter>

@@ -43,6 +43,10 @@ export default class Title extends Component {
         <Button>
           <Link style={LinkCss} to='/book'>Book</Link>
         </Button>
+        <br />
+        <Button>
+          <Link style={LinkCss} to='/weathermood'>WeatherMood</Link>
+        </Button>
         <Footer />
       </div>
     )
