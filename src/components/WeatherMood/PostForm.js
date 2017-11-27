@@ -21,7 +21,7 @@ class PostForm extends Component {
   }
 
   render () {
-    const {inputValue} = this.props
+    // const {inputValue} = this.props
     // const inputDanger = this.props.inputDanger ? 'has-danger' : ''
 
     return (

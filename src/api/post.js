@@ -33,20 +33,20 @@ export function createPost (mood, text) {
 }
 
 // Simulated server-side code
-function _createPost (mood, text) {
+function _createPost (text) {
   const newPost = {
     id: uuid(),
     open: false,
-    mood: mood,
-    text: text,
-    ts: moment().unix(),
-    clearVotes: 0,
-    cloudsVotes: 0,
-    drizzleVotes: 0,
-    rainVotes: 0,
-    thunderVotes: 0,
-    snowVotes: 0,
-    windyVotes: 0
+    // mood: mood,
+    text: text
+    // ts: moment().unix(),
+    // clearVotes: 0,
+    // cloudsVotes: 0,
+    // drizzleVotes: 0,
+    // rainVotes: 0,
+    // thunderVotes: 0,
+    // snowVotes: 0,
+    // windyVotes: 0
   }
   const posts = [
     newPost,
@@ -57,25 +57,25 @@ function _createPost (mood, text) {
   return newPost
 }
 
-export function createVote (id, mood) {
+export function createVote (id) {
   return new Promise((resolve, reject) => {
-    _createVote(id, mood)
+    _createVote(id)
     resolve()
   })
 }
 
 // Simulated server-side code
-function _createVote (id, mood) {
+function _createVote (id) {
   const posts = _listPosts().map(p => {
     if (p.id === id) {
-      console.log(mood.toLowerCase())
-      if (mood === 'True') {
-        console.log('find true')
-        p.open = true
-      } else {
-        p[mood.toLowerCase() + 'Votes']++
-        p.open = false
-      }
+      // console.log(mood.toLowerCase())
+      // if (mood === 'True') {
+      //   console.log('find true')
+      //   p.open = true
+      // } else {
+      //   p[mood.toLowerCase() + 'Votes']++
+      //   p.open = false
+      // }
     }
     return p
   })

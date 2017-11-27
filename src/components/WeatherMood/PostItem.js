@@ -15,7 +15,7 @@ class PostItem extends Component {
   }
 
   render () {
-    const {id, open, text} = this.props
+    const {text} = this.props
     return (
       <Li onClick={this.handleClick} >
         <Item>

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 // import PropTypes from 'prop-types'
 import PostForm from './PostForm'
 import PostList from './PostList'
-import { listPosts, createPost, createVote } from '../../api/post'
+import { listPosts, createPost } from '../../api/post'
 import { connect } from 'react-redux'
 
 class Today extends Component {
@@ -14,7 +14,7 @@ class Today extends Component {
       posts: [] // 訊息是陣列
     }
     this.handleCreatePost = this.handleCreatePost.bind(this)
-    this.handleCreateVote = this.handleCreateVote.bind(this)
+    // this.handleCreateVote = this.handleCreateVote.bind(this)
   }
 
   componentDidMount () {
@@ -72,13 +72,13 @@ class Today extends Component {
     })
   }
 
-  handleCreateVote (id) {
-    createVote(id).then(() => {
-      this.listPosts(this.props.searchText)
-    }).catch(err => {
-      console.error('Error create vote', err)
-    })
-  }
+  // handleCreateVote (id) {
+  //   createVote(id).then(() => {
+  //     this.listPosts(this.props.searchText)
+  //   }).catch(err => {
+  //     console.error('Error create vote', err)
+  //   })
+  // }
 }
 
 export default connect((state) => {
