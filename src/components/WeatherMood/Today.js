@@ -35,10 +35,10 @@ class Today extends Component {
       <div className='today'>
         <div className='posts'>
           <PostForm onPost={this.handleCreatePost} />
-          { /* <PostList posts={posts} onVote={this.handleCreateVote} />{
-          //   postLoading &&
-          //   <div>Loading</div>
-          // } */ }
+          <PostList posts={posts} onVote={this.handleCreateVote} />{
+            postLoading &&
+            <div>Loading</div>
+          }
         </div>
       </div>
     )

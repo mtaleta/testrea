@@ -31,17 +31,14 @@ export function main (state = initMainState, action) {
 
 const initPostFormState = {
   inputValue: null,
-  inputDanger: false,
-  moodToggle: false,
-  mood: 'na'
+  inputDanger: false
 }
 
 export function postForm (state = initPostFormState, action) {
   switch (action.type) {
     case '@PostForm/dropdownSelect':
       return {
-        ...state,
-        mood: action.mood
+        ...state
       }
     case '@PostForm/inputchange':
       return {
@@ -58,17 +55,6 @@ export function postForm (state = initPostFormState, action) {
         ...state,
         inputDanger: true
       }
-    case '@PostForm/trueMoodToggle':
-      return {
-        ...state,
-        moddToggle: true
-      }
-    case '@PostForm/moodToggle':
-      return {
-        ...state,
-        moodToggle: !state.moodToggle
-      }
-
     default:
       return state
   }

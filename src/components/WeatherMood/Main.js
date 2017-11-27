@@ -11,36 +11,34 @@ export default class Main extends Component {
     this.state = {
       searchText: '' // 搜尋功能
     }
-    this.store = {
-      searchText: '' // 搜尋功能
-    }
+    this.store = null
     this.searchEl = null // 搜尋後回傳為null
 
-    this.handSearchKeyPress = this.handSearchKeyPress.bind(this)
+    this.handleSearchKeyPress = this.handleSearchKeyPress.bind(this)
     this.handleClearSearch = this.handleClearSearch.bind(this)
   }
   render () {
-    const {searchText} = this.state.searchText
+    const {searchText} = this.props
     return (
       <div>
-        <div>
+        {/* <div> 搜尋功能先不顯示
           <input
             type='text'
             // getRef={this.searchEl}
             placeholder='找什麼'
-            onKeyPress={this.handSearchKeyPress}
+            onKeyPress={this.handleSearchKeyPress}
             // getRef={e => this.searchEl = e}
             />
           {searchText && <i onClick={this.handleClearSearch}>X</i>}
-        </div>
+    </div> */}
         <Today sesrchText={searchText} />
       </div>
     )
   }
 
   // 點擊
-  handSearchKeyPress (e) {
-    let keyCode = e.keyCode || e.which
+  handleSearchKeyPress (e) {
+    var keyCode = e.keyCode || e.which
     if (keyCode === 13) {
       console.log('Press')
       this.store.dispatch(searchKeyPress(e.target.value))
