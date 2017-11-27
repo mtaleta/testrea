@@ -1,7 +1,8 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { createStore, applyMiddleware, compose } from 'redux'
-// import Promise from 'redux-promise'
+import Promise from 'redux-promise'
+import createSagaMiddleware from 'redux-saga'
 import {Provider} from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
@@ -16,14 +17,27 @@ import PostsShow from 'components/Blog/post_show'
 import CanvasIndex from 'components/Canvas/index'
 import Book from 'components/Book/index'
 import WeatherMood from 'components/WeatherMood/Main'
+import rootSaga from './sagas/root.Saga'
 // import 'bootstrap/dist/css/bootstrap.css'
+// 加入saga// create saga middleware
+const sagaMiddleware = createSagaMiddleware()
 
-// 加入middleware
+// middleware改為sagas
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+// const store = createStore(
+//   rootSaga,
+//   reducer,
+//   composeEnhancers(applyMiddleware(thunkMiddleware, sagaMiddleware))
+//   )
+// sagaMiddleware.run(rootSaga)
+
+// 加入middleware,thunk及promise
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   reducer,
- composeEnhancers(applyMiddleware(thunkMiddleware)))
+ composeEnhancers(applyMiddleware(thunkMiddleware, Promise)))
 
+// 只有createStore
 // const store = createStore(
 //   reducer,
 //   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
