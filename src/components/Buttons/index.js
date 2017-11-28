@@ -26,7 +26,7 @@ const Button = styled.button`
   min-height: 40px;
   min-width: 144px;
   margin: 5px 10px;
-
+  background-color: #ccc;
   &:disabled {
     opacity: 0.5;
   }

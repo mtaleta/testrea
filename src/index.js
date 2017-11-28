@@ -2,10 +2,11 @@ import React from 'react'
 import { render } from 'react-dom'
 import { createStore, applyMiddleware, compose } from 'redux'
 import Promise from 'redux-promise'
-import createSagaMiddleware from 'redux-saga'
 import {Provider} from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import '../node_modules/ress/dist/ress.min.css' // 重構css,避免不同瀏覽器跑版
+import '../node_modules/font-awesome/css/font-awesome.min.css' // icon
 import reducer from './reducers'
 import Main from './containers/Todos/Main'
 import Title from './containers/Menu'
@@ -17,11 +18,12 @@ import PostsShow from 'components/Blog/post_show'
 import CanvasIndex from 'components/Canvas/index'
 import Book from 'components/Book/index'
 import WeatherMood from 'components/WeatherMood/Main'
-import rootSaga from './sagas/root.Saga'
+// import createSagaMiddleware from 'redux-saga'
+// import rootSaga from './sagas/root.Saga'
 // import 'bootstrap/dist/css/bootstrap.css'
-// 加入saga// create saga middleware
-const sagaMiddleware = createSagaMiddleware()
 
+// 加入saga// create saga middleware
+// const sagaMiddleware = createSagaMiddleware()
 // middleware改為sagas
 // const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 // const store = createStore(
