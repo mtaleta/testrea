@@ -12,11 +12,14 @@ const LinkCss = {
 }
 
 const Img = {
-  'display': 'block',
-  'width': '100%',
   // height 撐滿可用空間
-  'height': '-webkit-fill-available',
-  'backgroundImage': 'url(images/w-na-bg.jpg)'
+  // 'height': '-webkit-fill-available',
+  'height': '100vh',
+  'backgroundColor': '#354b5b',
+  // 'backgroundImage': 'url(images/w-na-bg.jpg)'
+  'display': 'flex',
+  'justifyContent': 'center',
+  'alignItems': 'center'
 }
 const FlexLink = {
   'display': 'flex',

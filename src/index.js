@@ -8,6 +8,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import '../node_modules/ress/dist/ress.min.css' // 重構css,避免不同瀏覽器跑版
 import '../node_modules/font-awesome/css/font-awesome.min.css' // icon
 import reducer from './reducers'
+import NotFound from './containers/NotFound/NotFound'
 import Main from './containers/Todos/Main'
 import Title from './containers/Menu'
 import App from './containers/Weather/app'
@@ -25,8 +26,8 @@ import rootSaga from './components/Saga/sagas'
 
 // 加入saga// create saga middleware
 const sagaMiddleware = createSagaMiddleware()
-// middleware改為sagas
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || null
+// middleware改為sagas //blog用promise,,要使用時再改回
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   reducer,
   composeEnhancers(applyMiddleware(thunkMiddleware, sagaMiddleware))
@@ -61,6 +62,7 @@ render(
           <Route exact path='/book' component={Book} />
           <Route exact path='/weathermood' component={WeatherMood} />
           <Route exact path='/saga' component={Count} />
+          <Route component={NotFound} />
         </Switch>
       </div>
     </BrowserRouter>
