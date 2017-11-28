@@ -1,7 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { createStore, applyMiddleware, compose } from 'redux'
-import Promise from 'redux-promise'
+// import Promise from 'redux-promise'
 import {Provider} from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
@@ -18,26 +18,26 @@ import PostsShow from 'components/Blog/post_show'
 import CanvasIndex from 'components/Canvas/index'
 import Book from 'components/Book/index'
 import WeatherMood from 'components/WeatherMood/Main'
-// import createSagaMiddleware from 'redux-saga'
-// import rootSaga from './sagas/root.Saga'
+import Count from './components/Saga/components/Count'
+import createSagaMiddleware from 'redux-saga'
+import rootSaga from './components/Saga/sagas'
 // import 'bootstrap/dist/css/bootstrap.css'
 
 // 加入saga// create saga middleware
-// const sagaMiddleware = createSagaMiddleware()
+const sagaMiddleware = createSagaMiddleware()
 // middleware改為sagas
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
-// const store = createStore(
-//   rootSaga,
-//   reducer,
-//   composeEnhancers(applyMiddleware(thunkMiddleware, sagaMiddleware))
-//   )
-// sagaMiddleware.run(rootSaga)
-
-// 加入middleware,thunk及promise
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || null
 const store = createStore(
   reducer,
- composeEnhancers(applyMiddleware(thunkMiddleware, Promise)))
+  composeEnhancers(applyMiddleware(thunkMiddleware, sagaMiddleware))
+  )
+sagaMiddleware.run(rootSaga)
+
+// 加入middleware,thunk及promise
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+// const store = createStore(
+//   reducer,
+//  composeEnhancers(applyMiddleware(thunkMiddleware, Promise)))
 
 // 只有createStore
 // const store = createStore(
@@ -60,6 +60,7 @@ render(
           <Route exact path='/video' component={Video} />
           <Route exact path='/book' component={Book} />
           <Route exact path='/weathermood' component={WeatherMood} />
+          <Route exact path='/saga' component={Count} />
         </Switch>
       </div>
     </BrowserRouter>

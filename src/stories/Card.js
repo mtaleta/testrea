@@ -8,6 +8,7 @@ const stories = storiesOf('Card', module)
 const { Cards, Bgimg, CardInfo, Title, Buttons
   , Demo, Circle, Repo, Des } = Card
 const bgStyle = {backgroundImage: `URL("${'https://i.imgur.com/jdMHS9t.gif'}")`}
+
 stories.add('Main', () => <div>
   <Cards>
     <Bgimg title='Demo' style={bgStyle} />

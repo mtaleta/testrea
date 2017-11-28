@@ -44,6 +44,7 @@ export default class Title extends Component {
           <Button><Link style={LinkCss} to='/canvas'>Canvas</Link></Button>
           <Button><Link style={LinkCss} to='/book'>Book</Link></Button>
           <Button><Link style={LinkCss} to='/weathermood'>WeatherMood</Link></Button>
+          <Button><Link style={LinkCss} to='/saga'>Saga</Link></Button>
         </div>
         <div style={FlexLogin}>
           <Wrapper name='Facebook'>Login with Facebook</Wrapper>
