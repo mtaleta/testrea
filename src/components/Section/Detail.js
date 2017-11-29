@@ -2,10 +2,12 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const Detail = styled.div`
-  width: 100%;
-  height: calc(~"100vh - 40px");
-  background: red;
-  overflow: auto;
+width: 100%;
+height: calc(~"100vh - 40px");
+background: red;
+overflow: auto;
+background-color: white;
+color: #555;
 `
 
 export default class DetailPage extends Component {

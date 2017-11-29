@@ -15,6 +15,9 @@ const LinkCss = {
 }
 
 const Img = {
+  // 'position': 'absolute',
+  // 'top': '0',
+  // 'left': '0'
   // height 撐滿可用空間
   // 'height': '-webkit-fill-available',
   // 'height': '100vh',
