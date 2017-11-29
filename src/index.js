@@ -10,7 +10,8 @@ import '../node_modules/font-awesome/css/font-awesome.min.css' // icon
 import reducer from './reducers'
 import NotFound from './containers/NotFound/NotFound'
 import Main from './containers/Todos/Main'
-import Title from './containers/Menu'
+import Title from './components/Section/Section'
+import Menu from './containers/Menu'
 import App from './containers/Weather/app'
 import Video from 'components/Youtube/video_index'
 import Blog from 'components/Blog/posts_index'
@@ -52,6 +53,7 @@ render(
       <div>
         <Switch>
           <Route exact path='/' component={Title} />
+          <Route exact path='/menu' component={Menu} />
           <Route exact path='/canvas' component={CanvasIndex} />
           <Route exact path='/blog' component={Blog} />
           <Route exact path='/blog/new' component={PostNew} />

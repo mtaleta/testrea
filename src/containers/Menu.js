@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 // import { connect } from 'react-redux'
+
 import { Link } from 'react-router-dom'
 import Button from 'components/Buttons'
 import Footer from 'components/Footer'
@@ -16,12 +17,12 @@ const LinkCss = {
 const Img = {
   // height 撐滿可用空間
   // 'height': '-webkit-fill-available',
-  'height': '100vh',
-  'backgroundColor': '#354b5b',
+  // 'height': '100vh',
+  // 'backgroundColor': '#fff',
   // 'backgroundImage': 'url(images/w-na-bg.jpg)'
-  'display': 'flex',
-  'justifyContent': 'center',
-  'alignItems': 'center'
+  // 'display': 'flex',
+  // 'justifyContent': 'center',
+  // 'alignItems': 'center'
 }
 const FlexLink = {
   'display': 'flex',
@@ -36,6 +37,7 @@ const FlexLogin = {
   'alignItems': 'center',
   'justifyContent': 'center'
 }
+
 export default class Title extends Component {
   constructor (props) {
     super(props)
@@ -67,6 +69,7 @@ export default class Title extends Component {
           <Button><Link style={LinkCss} to='/weathermood'>WeatherMood</Link></Button>
           <Button><Link style={LinkCss} to='/saga'>Saga</Link></Button>
         </div>
+
         <div style={FlexLogin}>
           <Wrapper name='Facebook'>Login with Facebook</Wrapper>
           <Wrapper name='Google'>Login with Google</Wrapper>
