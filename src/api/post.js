@@ -1,6 +1,6 @@
 import axios from 'axios'
 import uuid from 'uuid/v4'
-import moment from 'moment'
+// import moment from 'moment'
 import 'babel-polyfill'
 
 const postKey = 'posts'

@@ -4,7 +4,6 @@ export const SHOW_ACTIVE = 'show_active'
 
 // search
 
-
 // Main
 export function addTodo (text) {
   console.log('addTodo')

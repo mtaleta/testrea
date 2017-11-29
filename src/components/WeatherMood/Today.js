@@ -35,9 +35,9 @@ class Today extends Component {
       <div className='today'>
         <div className='posts'>
           <PostForm onPost={this.handleCreatePost} />
-          <PostList posts={posts} onVote={this.handleCreateVote} />{
+          <PostList posts={posts} />{
             postLoading &&
-            <div>Loading</div>
+            <div>Loading123</div>
           }
         </div>
       </div>
