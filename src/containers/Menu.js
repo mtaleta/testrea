@@ -56,6 +56,9 @@ export default class Title extends Component {
 
   render () {
     const { postLoading } = this.state
+    const {
+       id, goDetail
+    } = this.props
     return (
       <div style={Img}>
         <div style={FlexLink} onClick={this.clickLoad} >
@@ -80,6 +83,7 @@ export default class Title extends Component {
             <LoadingCircle />
           </AnimalCircle>
         }
+          <button className='more' onClick={() => goDetail(id)}>more</button>
         </div>
         <Footer />
       </div>

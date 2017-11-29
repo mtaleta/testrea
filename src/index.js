@@ -52,7 +52,7 @@ render(
     <BrowserRouter>
       <div>
         <Switch>
-          <Route exact path='/' component={Title} />
+          <Route path='/' component={Title} />
           <Route exact path='/menu' component={Menu} />
           <Route exact path='/canvas' component={CanvasIndex} />
           <Route exact path='/blog' component={Blog} />

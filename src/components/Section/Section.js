@@ -4,6 +4,7 @@ import Link from 'react-router-dom/Link'
 import { AnimatedRoute } from 'react-router-transition'
 import styled from 'styled-components'
 import DetailPage from './Detail'
+import Title from '../../containers/Menu'
 
 const GoHome = styled.div`
   position: fixed;
@@ -37,7 +38,7 @@ const Menus = styled.div`
 export default class Section extends Component {
 
   goDetail = (key) => {
-    this.props.history.push(`/detail/${key}`);
+    this.props.history.push('/detail');
   }
 
   render() {
@@ -47,9 +48,13 @@ export default class Section extends Component {
     
     return (
       <div>
+        <Title 
+          goDetail={this.goDetail}
+        />
         <Menus className={`menu`}>
           1231232222222222222222222222222222222222222
         </Menus>
+        <br /><br /><br />
         <Link to='/detail'>Show sidebar</Link>
         <GoHome className={`goHome`}>
           <Link to='/'>{'<-'}</Link>
