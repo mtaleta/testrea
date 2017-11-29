@@ -4,7 +4,9 @@ import PostForm from './PostForm'
 import PostList from './PostList'
 import { listPosts, createPost } from '../../api/post'
 import { connect } from 'react-redux'
+import Loading from 'components/Loading'
 
+const { AnimalCircle, LoadingCircle } = Loading
 class Today extends Component {
   constructor (props) {
     super(props)
@@ -35,9 +37,14 @@ class Today extends Component {
       <div className='today'>
         <div className='posts'>
           <PostForm onPost={this.handleCreatePost} />
-          <PostList posts={posts} />{
+          <PostList posts={posts} />
+          {
             postLoading &&
-            <div>Loading123</div>
+            <div>
+              <AnimalCircle>
+                <LoadingCircle />
+              </AnimalCircle>
+            </div>
           }
         </div>
       </div>

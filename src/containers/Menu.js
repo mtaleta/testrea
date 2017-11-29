@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 import Button from 'components/Buttons'
 import Footer from 'components/Footer'
 import Icon from 'components/Icon'
+import Loading from 'components/Loading'
 
+const { AnimalCircle, LoadingCircle } = Loading
 const {Wrapper} = Icon
 
 const LinkCss = {
@@ -35,10 +37,26 @@ const FlexLogin = {
   'justifyContent': 'center'
 }
 export default class Title extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      postLoading: false
+    }
+    this.clickLoad = this.clickLoad.bind(this)
+  }
+
+  clickLoad () {
+    this.setState({
+      postLoading: true
+    })
+  }
+
   render () {
+    const { postLoading } = this.state
     return (
       <div style={Img}>
-        <div style={FlexLink}>
+        <div style={FlexLink} onClick={this.clickLoad} >
           <Button><Link style={LinkCss} to='/main'>Todos</Link></Button>
           <Button><Link style={LinkCss} to='/app'>WeatherApp</Link></Button>
           <Button><Link style={LinkCss} to='/video'>Video</Link></Button>
@@ -52,6 +70,13 @@ export default class Title extends Component {
         <div style={FlexLogin}>
           <Wrapper name='Facebook'>Login with Facebook</Wrapper>
           <Wrapper name='Google'>Login with Google</Wrapper>
+        </div>
+        <div>{
+          postLoading &&
+          <AnimalCircle>
+            <LoadingCircle />
+          </AnimalCircle>
+        }
         </div>
         <Footer />
       </div>

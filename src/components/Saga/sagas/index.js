@@ -3,6 +3,10 @@ import { fork } from 'redux-saga/effects'
 import { takeEvery } from 'redux-saga'
 // 引入action,最後的rootSaga要fork
 import * as actions from '../../../actions'
+// import Loading from '../../Loading'
+// import React from 'react'
+
+// const { AnimalCircle, LoadingCircle } = Loading
 
 export function * watchFetchUser () {
   yield * takeEvery('*', fetchUser)
@@ -10,7 +14,21 @@ export function * watchFetchUser () {
 
 export function * fetchUser () {
   console.log('????')
+  setTimeout(() => {
+    console.log('AAA')
+    // return <div>
+    //   <AnimalCircle>
+    //     <LoadingCircle />
+    //   </AnimalCircle>
+    // </div>
+  }, 500)
 }
+
+export default function * rootSaga () {
+  yield fork(watchFetchUser)
+}
+
+// ================以下範例================
 
 // const action = type => ({type})
 
@@ -76,9 +94,9 @@ export function * fetchUser () {
 //   }
 // }
 
-export default function * rootSaga () {
-  // fork 類似於 call，可以用來調用普通函數和 Generator 函數。
-  // 但 fork 的調用是無阻塞的，在等待 fn 返回結果時，middleware 不會暫停 Generator。
-  // yield fork(watchIncrementAsync)
-  yield fork(watchFetchUser)
-}
+// export default function * rootSaga () {
+//   // fork 類似於 call，可以用來調用普通函數和 Generator 函數。
+//   // 但 fork 的調用是無阻塞的，在等待 fn 返回結果時，middleware 不會暫停 Generator。
+//   // yield fork(watchIncrementAsync)
+//   yield fork(watchFetchUser)
+// }
