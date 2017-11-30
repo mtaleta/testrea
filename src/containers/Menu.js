@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 // import { connect } from 'react-redux'
-
+import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import Button from 'components/Buttons'
-import Footer from 'components/Footer'
 import Icon from 'components/Icon'
 import Loading from 'components/Loading'
 
@@ -14,19 +13,6 @@ const LinkCss = {
   'textDecoration': 'none'
 }
 
-const Img = {
-  // 'position': 'absolute',
-  // 'top': '0',
-  // 'left': '0'
-  // height 撐滿可用空間
-  // 'height': '-webkit-fill-available',
-  // 'height': '100vh',
-  // 'backgroundColor': '#fff',
-  // 'backgroundImage': 'url(images/w-na-bg.jpg)'
-  // 'display': 'flex',
-  // 'justifyContent': 'center',
-  // 'alignItems': 'center'
-}
 const FlexLink = {
   'display': 'flex',
   'alignItems': 'flex-start',
@@ -38,7 +24,9 @@ const FlexLink = {
 const FlexLogin = {
   'display': 'flex',
   'alignItems': 'center',
-  'justifyContent': 'center'
+  'justifyContent': 'center',
+  'flexWrap': 'wrap',
+  'WebkitBoxPack': 'center'
 }
 
 export default class Title extends Component {
@@ -59,11 +47,8 @@ export default class Title extends Component {
 
   render () {
     const { postLoading } = this.state
-    const {
-       id, goDetail
-    } = this.props
     return (
-      <div style={Img}>
+      <div style={{'minHeight': '100vh'}} >
         <div style={FlexLink} onClick={this.clickLoad} >
           <Button><Link style={LinkCss} to='/main'>Todos</Link></Button>
           <Button><Link style={LinkCss} to='/app'>WeatherApp</Link></Button>
@@ -86,10 +71,13 @@ export default class Title extends Component {
             <LoadingCircle />
           </AnimalCircle>
         }
-          <button className='more' onClick={() => goDetail(id)}>more</button>
         </div>
-        <Footer />
       </div>
     )
   }
+}
+
+Title.PropTypes = {
+  id: PropTypes.string,
+  goDetail: PropTypes.string
 }

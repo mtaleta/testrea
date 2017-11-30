@@ -5,6 +5,9 @@ import { Link } from 'react-router-dom'
 import { fetchPosts } from '../../actions/blog_action'
 // 組件
 import Button from '../Buttons'
+import List from '../List'
+
+const { Ul, Li } = List
 
 class PostsIndex extends Component {
   componentDidMount () {
@@ -15,11 +18,11 @@ class PostsIndex extends Component {
     // map迭代集合
     return _.map(this.props.posts, post => {
       return (
-        <li className='list-group-item' key={post.id}>
+        <Li className='list-group-item' key={post.id}>
           <Button>
             <Link to={`/blog/${post.id}`}>{post.title}</Link>
           </Button>
-        </li>
+        </Li>
       )
     })
   }
@@ -35,9 +38,16 @@ class PostsIndex extends Component {
             <Link to='/'>back</Link>
           </Button>
           <h3>留下訊息</h3>
-          <ul className='list-group'>
+          <Ul style={{
+            'display': 'flex',
+            'justifyContent': 'center',
+            'alignItems': 'start',
+            'flexFlow': 'column',
+            'margin': '20px'
+          }}
+          >
             {this.renderPosts()}
-          </ul>
+          </Ul>
         </div>
       </div>
     )

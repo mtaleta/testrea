@@ -1,8 +1,15 @@
 import styled from 'styled-components'
-import React from 'react'
+import React, { Component } from 'react'
+import Scroll from 'react-scroll'
+
+const scroll = Scroll.animateScroll
 
 const Body = styled.div`
-  background-color:#333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  min-height: 100vh;
 `
 
 const Snow = styled.div`
@@ -43,10 +50,54 @@ const Snow = styled.div`
   background-color: #333;
 `
 
-const AnimationSnow = props => {
-  return <Body>
-    <Snow />
-  </Body>
+const Title = styled.div`
+  margin-top: -10%;
+  color: #eee;
+  text-align: center;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  z-index: 1;
+`
+
+const ScrollDown = styled.div`
+  font-size: .5rem;
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, 0);
+  animation-duration: 3s;
+  animation-delay: 2s;
+  animation-iteration-count: infinite;
+  color: #fff;
+  border:1px solid rgba(102,217,239, .5);
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1;
+`
+
+class AnimationSnow extends Component {
+  constructor (props) {
+    super(props)
+
+    this.handleScrollDown = this.handleScrollDown.bind(this)
+  }
+  handleScrollDown () {
+    scroll.scrollTo(window.innerHeight)
+  }
+
+  render () {
+    return (
+      <Body>
+        <Snow />
+        <Title>Hello</Title>
+        <ScrollDown onClick={this.handleScrollDown} >
+          <div>▽</div>
+        </ScrollDown>
+      </Body>
+    )
+  }
 }
 
 AnimationSnow.Body = Body

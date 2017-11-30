@@ -1,10 +1,12 @@
 // import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import React from 'react'
 
 // 只有設在body才有效果
 const Wrapper = styled.div`
+  position: relative;
   width: 100%;
-  height: 100%;
+  min-height: 100vh;
   padding: 0;
   margin: 0;
   background-color: #2C3D4F;
@@ -87,7 +89,7 @@ const Red = styled.div`
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-298.042px, 37.0336px);
   box-shadow: -10px -10px #bb001d inset, 0px 0px 40px rgba(0, 0, 0, 0.3);
   z-index: 100;
 `
@@ -100,7 +102,7 @@ const Yellow = styled.div`
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(298.753px, 29.8751px);
   z-index: 100;
 `
 const Trace1 = styled.div`
@@ -125,10 +127,25 @@ const Trace2 = styled.div`
   transform: translate(-50%, -50%);
   opacity: 0.5;
 `
-const Circle = props => {
-  return <Wrapper>
-    {props.children}
-  </Wrapper>
+
+class Circle extends React.Component {
+  render () {
+    return (
+      <Wrapper>
+        <Space />
+        <Moon>
+          <Hole1 />
+          <Hole2 />
+          <Hole3 />
+          <Hole4 />
+        </Moon>
+        <Red />
+        <Yellow />
+        <Trace1 />
+        <Trace2 />
+      </Wrapper>
+    )
+  }
 }
 
 Circle.Wrapper = Wrapper

@@ -28,7 +28,12 @@ class PostShow extends Component {
     }
 
     return (
-      <div>
+      <div style={{
+        'display': 'flex',
+        'justifyContent': 'center',
+        'alignItems': 'center'
+      }}
+      >
         <Button>
           <Link to='/blog' className='btn'>Back to post</Link>
         </Button>
@@ -41,9 +46,9 @@ class PostShow extends Component {
         >
           Delete Post
         </Button>
-        <h3>{post.title}</h3>
-        <h6>Categories: {post.categories}</h6>
-        <p>{post.content}</p>
+        <h3>標題：{post.title}</h3>
+        <h6>類別： {post.categories}</h6>
+        <p>內容：{post.content}</p>
       </div>
     )
   }

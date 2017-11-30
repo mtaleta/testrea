@@ -2,7 +2,7 @@
 import { fork } from 'redux-saga/effects'
 import { takeEvery } from 'redux-saga'
 // 引入action,最後的rootSaga要fork
-import * as actions from '../../../actions'
+import * as actions from '../actions'
 // import Loading from '../../Loading'
 // import React from 'react'
 

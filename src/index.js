@@ -1,16 +1,18 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { createStore, applyMiddleware, compose } from 'redux'
-// import Promise from 'redux-promise'
+import Promise from 'redux-promise'
 import {Provider} from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import '../node_modules/ress/dist/ress.min.css' // 重構css,避免不同瀏覽器跑版
 import '../node_modules/font-awesome/css/font-awesome.min.css' // icon
+
 import reducer from './reducers'
 import NotFound from './containers/NotFound/NotFound'
+import Home from './containers/Home'
 import Main from './containers/Todos/Main'
-import Title from './components/Section/Section'
+// import Title from './containers/Section'
 import Menu from './containers/Menu'
 import App from './containers/Weather/app'
 import Video from 'components/Youtube/video_index'
@@ -22,7 +24,7 @@ import Book from 'components/Book/index'
 import WeatherMood from 'components/WeatherMood/Main'
 import Count from './components/Saga/components/Count'
 import createSagaMiddleware from 'redux-saga'
-import rootSaga from './components/Saga/sagas'
+import rootSaga from './sagas/index'
 // import 'bootstrap/dist/css/bootstrap.css'
 
 // 加入saga// create saga middleware
@@ -31,7 +33,7 @@ const sagaMiddleware = createSagaMiddleware()
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 const store = createStore(
   reducer,
-  composeEnhancers(applyMiddleware(thunkMiddleware, sagaMiddleware))
+  composeEnhancers(applyMiddleware(thunkMiddleware, Promise, sagaMiddleware))
   )
 sagaMiddleware.run(rootSaga)
 
@@ -47,12 +49,13 @@ sagaMiddleware.run(rootSaga)
 //   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 // )
 
+// <Route path='/' component={Title} />
 render(
   <Provider store={store}>
     <BrowserRouter>
       <div>
         <Switch>
-          <Route path='/' component={Title} />
+          <Route exact path='/' component={Home} />
           <Route exact path='/menu' component={Menu} />
           <Route exact path='/canvas' component={CanvasIndex} />
           <Route exact path='/blog' component={Blog} />

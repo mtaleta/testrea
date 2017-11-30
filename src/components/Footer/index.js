@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import React from 'react'
 
 const BackgroundWrapper = styled.div`
-  position: absolute;
   background-color: #aaa;
   bottom: 0px;
   right: 0px;
